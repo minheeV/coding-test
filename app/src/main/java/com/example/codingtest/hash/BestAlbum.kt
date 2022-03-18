@@ -1,10 +1,7 @@
 package com.example.codingtest.hash
 
 
-import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
-import kotlin.math.min
 
 
 class BestAlbum {

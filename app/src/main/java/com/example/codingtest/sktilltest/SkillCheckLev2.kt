@@ -1,4 +1,4 @@
-package com.example.codingtest
+package com.example.codingtest.sktilltest
 
 import androidx.appcompat.app.AppCompatActivity
 

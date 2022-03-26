@@ -1,7 +1,5 @@
 package com.example.codingtest.greedy
 
-
-
 class GymSuit {
     fun solution(n: Int, lost: IntArray, reserve: IntArray): Int {
         var answer = 0

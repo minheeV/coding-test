@@ -17,6 +17,23 @@ s	return
 "for the last week"	"For The Last Week"
 ※ 공지 - 2022년 1월 14일 제한 조건과 테스트 케이스가 추가되었습니다.
 */
+
+class Solution {
+    fun solution(s: String): String {
+        var answer = ""
+        var splitList = s.split(" ")
+        for(i in splitList.indices){
+            answer += splitList[i].toLowerCase().capitalize()
+            if(i != splitList.size- 1){
+                answer += " "
+            }
+        }
+        return answer
+    }
+}
+
+
+
 class Level2JadenCase {
     fun solution(s: String): String {
         var answer = ""

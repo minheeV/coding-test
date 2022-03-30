@@ -17,7 +17,7 @@ import kotlin.math.ceil
 입출력 예
 progresses	speeds	return
 [93, 30, 55]	[1, 30, 5]	[2, 1]
-[95, 90, 99, 99, 80, 99]	[1, 1, 1, 1, 1, 1]	[1, 3, 2]
+[95, 90, 99, 99, 80, 99]	[1, 1, 1, 1, 1, 1]	[1, 3, 2] 5 10 1 1 20 1 [1 3 2]
 입출력 예 설명
 입출력 예 #1
 첫 번째 기능은 93% 완료되어 있고 하루에 1%씩 작업이 가능하므로 7일간 작업 후 배포가 가능합니다.
@@ -40,6 +40,29 @@ progresses	speeds	return
 
 class Level2기능개선 {
     fun solution(progresses: IntArray, speeds: IntArray): IntArray {
+        var dayList = mutableListOf<Int>()
+        var answer = mutableListOf<Int>()
+        var num = 0
+        for(i in progresses.indices){
+            dayList.add(ceil((100-progresses[i])/speeds[i].toDouble()).toInt())
+            if(i>0){
+                if(dayList[num]>=dayList[i]){
+                    answer[answer.size-1]+=1
+                } else{
+                    answer.add(1)
+                    num = i
+                }
+            }
+            else{
+                answer.add(1)
+            }
+        }
+        return answer.toIntArray()
+    }
+}
+
+/*
+*     fun solution(progresses: IntArray, speeds: IntArray): IntArray {
         var list = mutableListOf<Int>()
         var answer = mutableListOf<Int>()
 
@@ -69,4 +92,4 @@ class Level2기능개선 {
         }
         return answer.toIntArray()
     }
-}
+    * */

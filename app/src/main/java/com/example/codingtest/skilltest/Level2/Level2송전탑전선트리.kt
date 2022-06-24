@@ -1,4 +1,4 @@
-package com.example.codingtest.sktilltest
+package com.example.codingtest.skilltest.Level2
 /*
 * n개의 송전탑이 전선을 통해 하나의 트리 형태로 연결되어 있습니다.
 * 당신은 이 전선들 중 하나를 끊어서 현재의 전력망 네트워크를 2개로 분할하려고 합니다.

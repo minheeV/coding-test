@@ -1,17 +1,8 @@
-package com.example.codingtest.sktilltest
+package com.example.codingtest.skilltest.Level2
 
 import java.util.*
 
 class SkillTest2괄호회전하기 {
-    /*
-    * 문자열 s에는 공백으로 구분된 숫자들이 저장되어 있습니다. str에 나타나는 숫자 중 최소값과 최대값을 찾아 이를 "(최소값) (최대값)"형태의 문자열을 반환하는 함수, solution을 완성하세요.
-예를들어 s가 "1 2 3 4"라면 "1 4"를 리턴하고, "-1 -2 -3 -4"라면 "-4 -1"을 리턴하면 됩니다.
-* */
-    fun solution(s: String): String {
-        val answer = s.split(" ").map { it.toInt() }.sorted()
-        return answer[0].toString() + " " + answer[answer.size - 1]
-    }
-
     /*
     다음 규칙을 지키는 문자열을 올바른 괄호 문자열이라고 정의합니다.
 
@@ -37,31 +28,20 @@ class SkillTest2괄호회전하기 {
     */
     fun solution1(s: String): Int {
         var answer: Int = -1
-        var queue = s.split("")
-
-
-        for(q in queue.indices){
-
+        var temp = s
+        for(i in s.indices){
+            var stk = Stack<Char>()
+            for(ch in temp){
+                if(ch == '[' || ch == '{'|| ch == '('){
+                    stk.push(ch)
+                } else if(stk.empty()){
+                    stk.push(ch)
+                } else{
+                   // if ((stk.peek() == '[' && ch == ']') || (stk.peek()))
+                }
+            }
         }
-
-
 
         return answer
     }
 }
-
-/*        var stack = Stack<Char>()
-
-        for(str in s){
-            when(str){
-                '[' -> stack.push(str)
-                ']' -> if(stack.peek()!='[')
-                        stack.push(str)
-                '{' -> stack.push(str)
-                '}' -> stack.push(str)
-                '(' -> stack.push(str)
-                ')' -> stack.push(str)
-
-
-            }
-        }*/

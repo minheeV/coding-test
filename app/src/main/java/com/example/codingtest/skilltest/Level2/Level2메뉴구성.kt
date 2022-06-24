@@ -1,4 +1,4 @@
-package com.example.codingtest.sktilltest
+package com.example.codingtest.skilltest.Level2
 
 /*
 * 문제 설명

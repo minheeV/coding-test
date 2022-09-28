@@ -9,7 +9,8 @@ class SelfNumber4673 {
             var sum = 0
             val splitNum = num.toString().split("")
             for (i in splitNum) {
-                sum += i.toInt()
+                if(i.isNotEmpty())
+                    sum += i.toInt()
             }
             sum += num
             sumList.add(sum)
@@ -22,6 +23,5 @@ class SelfNumber4673 {
                 println(num)
             }
         }
-
     }
 }

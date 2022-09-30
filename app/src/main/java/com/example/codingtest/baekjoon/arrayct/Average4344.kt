@@ -1,42 +1,44 @@
 package com.example.codingtest.baekjoon.arrayct
 
-import java.lang.Math.round
-import java.util.Scanner
-import kotlin.math.roundToInt
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.util.*
 
 class Average4344 {
     fun main() {
-        val scanner = Scanner(System.`in`)
-        val tcCount = scanner.nextInt() // tc 수
-        val scoreArray = mutableListOf<Array<Int>>() // 학생 수 , 점수
+        val br = BufferedReader(InputStreamReader(System.`in`))
+        val tcCount = br.readLine().toInt() // tc 수
+        val scoreArray = mutableListOf<List<String>>() // 학생 수 , 점수
 
-        for (cnt in 0..tcCount) {
-            var c = scanner.nextInt()
-            var sc : Array<Int>? = arrayOf()
-            for(i in 0 until c){
-                sc?.set(i, scanner.nextInt())
-            }
-            if (sc != null) {
-                scoreArray.add(sc)
-            }
+        for (cnt in 0 until tcCount) {
+            val list = br.readLine().split(" ")
+            scoreArray.add(list)
         }
 
+        /*for (cnt in 0 until tcCount) {
+            val st = StringTokenizer(br.readLine()," ")
+            val list = mutableListOf<String>()
+            for(i in 0  until st.countTokens()){
+                list.add(st.nextToken())
+            }
+            val list1 = br.readLine().split(" ")
+            scoreArray.add(list)
+        }*/
+
         var scoreSum = 0
-        var scoreAvg = 0
 
         for (scoreArr in scoreArray) {
             for (sum in 1 until scoreArr.size){
-                scoreSum += scoreArr[sum]
+                scoreSum += scoreArr[sum].toInt()
             }
-            scoreAvg = scoreSum/scoreArr[0]
             val excess =  scoreArr.count {
-                it>scoreAvg
+                it.toDouble()>scoreSum/scoreArr[0].toInt()
             }
 
             val result =
-                String.format("%.4f", excess / scoreArr[0].toDouble() * 100).toDouble()
-                    .roundToInt()
+                String.format("%.3f", excess / scoreArr[0].toDouble() * 100.000)
             println("$result%")
+            scoreSum=0
         }
     }
 

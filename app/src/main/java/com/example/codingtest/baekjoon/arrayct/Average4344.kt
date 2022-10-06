@@ -31,8 +31,13 @@ class Average4344 {
             for (sum in 1 until scoreArr.size){
                 scoreSum += scoreArr[sum].toInt()
             }
-            val excess =  scoreArr.count {
-                it.toDouble()>scoreSum/scoreArr[0].toInt()
+
+            var excess = 0
+            for(i in 1 until scoreArr.size){
+                println("${scoreArr[i].toDouble()} 확인")
+                if(scoreArr[i].toDouble()>scoreSum/scoreArr[0].toInt()){
+                    excess++
+                }
             }
 
             val result =

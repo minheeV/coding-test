@@ -1,4 +1,4 @@
-package com.example.codingtest.baekjoon.arrayct;
+package com.example.codingtest.baekjoon.methodct;
 
 public class NSum {
     long sum(int[] a) {

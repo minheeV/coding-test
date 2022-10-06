@@ -1,6 +1,4 @@
-package com.example.codingtest.baekjoon.arrayct
-
-import java.lang.Exception
+package com.example.codingtest.baekjoon.methodct
 
 class SelfNumber4673 {
     fun main() {

@@ -1,4 +1,4 @@
-package com.example.codingtest.baekjoon.arrayct
+package com.example.codingtest.baekjoon.methodct
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
